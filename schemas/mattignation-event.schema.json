@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mattignation Lifecycle Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "timestamp",
+    "record_id",
+    "event_type",
+    "actor",
+    "policy_version",
+    "source_digest"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "record_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "enum": [
+        "INGESTED",
+        "NORMALIZED",
+        "CLASSIFIED",
+        "ENRICHED",
+        "CORROBORATED",
+        "VALIDATED",
+        "PUBLISHED",
+        "FLAGGED",
+        "QUARANTINED",
+        "CORRECTION_PROPOSED",
+        "CORRECTED",
+        "SUPERSEDED",
+        "RETIRED",
+        "REVIEWED",
+        "DENIED"
+      ]
+    },
+    "actor": {
+      "type": "string"
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "source_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "decision": {
+      "enum": [
+        "ALLOW",
+        "DENY",
+        "REVIEW",
+        "NO_ACTION"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "authorization_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "previous_event_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
