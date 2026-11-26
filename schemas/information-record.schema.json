@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vanellyetm-ux.github.io/Lumi/schemas/information-record.schema.json",
+  "title": "Mattignation Information Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "schema_version",
+    "source",
+    "received_at",
+    "claim",
+    "evidence_class",
+    "maturity_state",
+    "mitigation_state",
+    "lineage"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "reference",
+        "digest"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "document",
+            "dataset",
+            "measurement",
+            "api",
+            "human_statement",
+            "model_output",
+            "fixture",
+            "unknown"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "acquired_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_class"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_class": {
+          "enum": [
+            "OBSERVED",
+            "REPRODUCED",
+            "CORROBORATED",
+            "INFERRED",
+            "HYPOTHESIS",
+            "SIMULATED",
+            "UNKNOWN"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "evidence_class": {
+      "enum": [
+        "OBSERVED",
+        "REPRODUCED",
+        "CORROBORATED",
+        "INFERRED",
+        "HYPOTHESIS",
+        "SIMULATED",
+        "UNKNOWN"
+      ]
+    },
+    "maturity_state": {
+      "enum": [
+        "RECEIVED",
+        "NORMALIZED",
+        "CLASSIFIED",
+        "ENRICHED",
+        "CORROBORATED",
+        "VALIDATED",
+        "PUBLISHED"
+      ]
+    },
+    "mitigation_state": {
+      "enum": [
+        "CLEAR",
+        "FLAGGED",
+        "QUARANTINED",
+        "CORRECTION_REQUIRED",
+        "SUPERSEDED",
+        "RETIRED"
+      ]
+    },
+    "mitigation_reasons": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "MISSING_PROVENANCE",
+          "CONTRADICTION",
+          "STALE",
+          "LOW_EVIDENCE",
+          "PRIVACY_RISK",
+          "UNSAFE_USE",
+          "SCHEMA_INVALID",
+          "SOURCE_UNTRUSTED",
+          "MODEL_DRIFT",
+          "UNKNOWN"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "lineage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "operation",
+          "tool_version",
+          "timestamp"
+        ],
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "tool_version": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "parent_record_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "input_digest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output_digest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradiction_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "privacy_class": {
+      "enum": [
+        "PUBLIC",
+        "INTERNAL",
+        "CONFIDENTIAL",
+        "RESTRICTED"
+      ]
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "decision": {
+          "enum": [
+            "PENDING",
+            "ACCEPTED",
+            "REJECTED",
+            "NEEDS_EVIDENCE"
+          ]
+        }
+      }
+    },
+    "notices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
