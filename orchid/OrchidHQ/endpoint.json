@@ -1,0 +1,8 @@
+{
+  "service": "VaN Knowledge HQ",
+  "baseURL": "https://yaero.runs-at.dev",
+  "healthPath": "/health",
+  "verification": "UNVERIFIED",
+  "authentication": "NOT_VERIFIED",
+  "keyboardNetworkAccess": false
+}
