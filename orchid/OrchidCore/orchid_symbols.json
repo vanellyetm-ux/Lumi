@@ -1,0 +1,155 @@
+{
+  "format": "ORCHID_SYMBOL_PACK_V1",
+  "visibility": "USER_SHARED_PRIVATE_PACK",
+  "source": {
+    "repository": "vanellyetm-ux/Lumi",
+    "evidence_class": "PROPOSED",
+    "source_lineage": "VaN HQ symbol receiver design"
+  },
+  "symbols": [
+    {
+      "symbol": "Vœ",
+      "shortcut": ";vo",
+      "meaning": "Preserve original source",
+      "category": "origin"
+    },
+    {
+      "symbol": "Φ",
+      "shortcut": ";phi",
+      "meaning": "Identity validation request",
+      "category": "geometry"
+    },
+    {
+      "symbol": "π",
+      "shortcut": ";pi",
+      "meaning": "Pi and geometry",
+      "category": "geometry"
+    },
+    {
+      "symbol": "SîS",
+      "shortcut": ";sis",
+      "meaning": "Symbolic encoding",
+      "category": "encoding"
+    },
+    {
+      "symbol": "Ⅲ",
+      "shortcut": ";iii",
+      "meaning": "Independent invention",
+      "category": "identity"
+    },
+    {
+      "symbol": "⊕",
+      "shortcut": ";merge",
+      "meaning": "Compose without erasure",
+      "category": "logic"
+    },
+    {
+      "symbol": "⊘",
+      "shortcut": ";stop",
+      "meaning": "Stop request (not automatic)",
+      "category": "logic"
+    },
+    {
+      "symbol": "⟲",
+      "shortcut": ";retry",
+      "meaning": "Revalidation request",
+      "category": "verification"
+    },
+    {
+      "symbol": "✓",
+      "shortcut": ";verify",
+      "meaning": "Verification request",
+      "category": "verification"
+    },
+    {
+      "symbol": "⚿",
+      "shortcut": ";auth",
+      "meaning": "Authorization request",
+      "category": "governance"
+    },
+    {
+      "symbol": "✧",
+      "shortcut": ";orchid",
+      "meaning": "ORCHID receiver",
+      "category": "identity"
+    },
+    {
+      "symbol": "VaN",
+      "shortcut": ";van",
+      "meaning": "VaN Knowledge HQ",
+      "category": "identity"
+    },
+    {
+      "symbol": "∴",
+      "shortcut": ";therefore",
+      "meaning": "Therefore",
+      "category": "logic"
+    },
+    {
+      "symbol": "∵",
+      "shortcut": ";because",
+      "meaning": "Because",
+      "category": "logic"
+    },
+    {
+      "symbol": "∆",
+      "shortcut": ";delta",
+      "meaning": "Change or delta",
+      "category": "geometry"
+    },
+    {
+      "symbol": "∑",
+      "shortcut": ";sigma",
+      "meaning": "Summation",
+      "category": "geometry"
+    },
+    {
+      "symbol": "∞",
+      "shortcut": ";inf",
+      "meaning": "Infinity",
+      "category": "geometry"
+    },
+    {
+      "symbol": "⊗",
+      "shortcut": ";cross",
+      "meaning": "Cross product or tensor",
+      "category": "geometry"
+    },
+    {
+      "symbol": "⟡",
+      "shortcut": ";origin",
+      "meaning": "Original identity marker",
+      "category": "origin"
+    },
+    {
+      "symbol": "↗",
+      "shortcut": ";promote",
+      "meaning": "Request promotion review",
+      "category": "governance"
+    },
+    {
+      "symbol": "⊣",
+      "shortcut": ";boundary",
+      "meaning": "Boundary or constraint",
+      "category": "governance"
+    },
+    {
+      "symbol": "⌘",
+      "shortcut": ";command",
+      "meaning": "Command marker",
+      "category": "logic"
+    },
+    {
+      "symbol": "⌁",
+      "shortcut": ";wave",
+      "meaning": "Wave",
+      "category": "geometry"
+    },
+    {
+      "symbol": "⟐",
+      "shortcut": ";link",
+      "meaning": "Source linkage",
+      "category": "origin"
+    }
+  ]
+}
